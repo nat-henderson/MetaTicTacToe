@@ -1,0 +1,9 @@
+C:\Users\Nathan\Documents\My Dropbox\Open Projects\MetaTicTacToe\Client\MetaTicTacToe\bin\Release\MetaTicTacToe.exe
+C:\Users\Nathan\Documents\My Dropbox\Open Projects\MetaTicTacToe\Client\MetaTicTacToe\bin\Release\MetaTicTacToe.pdb
+C:\Users\Nathan\Documents\My Dropbox\Open Projects\MetaTicTacToe\Client\MetaTicTacToe\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Nathan\Documents\My Dropbox\Open Projects\MetaTicTacToe\Client\MetaTicTacToe\obj\x86\Release\MetaTicTacToe.MetaTicTacToeClient.resources
+C:\Users\Nathan\Documents\My Dropbox\Open Projects\MetaTicTacToe\Client\MetaTicTacToe\obj\x86\Release\MetaTicTacToe.Properties.Resources.resources
+C:\Users\Nathan\Documents\My Dropbox\Open Projects\MetaTicTacToe\Client\MetaTicTacToe\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\Nathan\Documents\My Dropbox\Open Projects\MetaTicTacToe\Client\MetaTicTacToe\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\Nathan\Documents\My Dropbox\Open Projects\MetaTicTacToe\Client\MetaTicTacToe\obj\x86\Release\MetaTicTacToe.exe
+C:\Users\Nathan\Documents\My Dropbox\Open Projects\MetaTicTacToe\Client\MetaTicTacToe\obj\x86\Release\MetaTicTacToe.pdb

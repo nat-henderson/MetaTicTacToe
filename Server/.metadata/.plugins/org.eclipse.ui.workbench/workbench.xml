@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="19" version="2.0">
+<workbench progressCount="17" version="2.0">
 <workbenchAdvisor/>
 <window height="1028" width="1672" x="75" y="4">
 <fastViewData fastViewLocation="1024"/>
@@ -36,21 +36,20 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MetaTicTacToeServer.java" partName="MetaTicTacToeServer.java" path="C:/Users/Nathan/Documents/My Dropbox/Java Development/MetaTicTacToe/src/metatictactoe/MetaTicTacToeServer.java" title="MetaTicTacToeServer.java" tooltip="MetaTicTacToe/src/metatictactoe/MetaTicTacToeServer.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MetaTicTacToeServer.java" partName="MetaTicTacToeServer.java" path="C:/Users/Nathan/Documents/My Dropbox/Open Projects/MetaTicTacToe/Server/MetaTicTacToe/src/metatictactoe/MetaTicTacToeServer.java" title="MetaTicTacToeServer.java" tooltip="MetaTicTacToe/src/metatictactoe/MetaTicTacToeServer.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MetaTicTacToe/src/metatictactoe/MetaTicTacToeServer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="234" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2946" selectionTopPixel="1134"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GameState.java" partName="GameState.java" path="C:/Users/Nathan/Documents/My Dropbox/Java Development/MetaTicTacToe/src/metatictactoe/GameState.java" title="GameState.java" tooltip="MetaTicTacToe/src/metatictactoe/GameState.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GameState.java" partName="GameState.java" path="C:/Users/Nathan/Documents/My Dropbox/Open Projects/MetaTicTacToe/Server/MetaTicTacToe/src/metatictactoe/GameState.java" title="GameState.java" tooltip="MetaTicTacToe/src/metatictactoe/GameState.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MetaTicTacToe/src/metatictactoe/GameState.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="872" selectionTopPixel="720"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1558" selectionTopPixel="750"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (4 items)"/>
-<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Errors (2 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="361"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -220,37 +219,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wb.core.guiEditor" path="/MetaTicTacToe/src/metatictactoe/MetaTicTacToeClient.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MetaTicTacToe/src/metatictactoe/GameState.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wb.core.guiEditor" path="/MetaTicTacToe/src/metatictactoe/MetaTicTacToeClient.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MetaTicTacToe/src/metatictactoe/GameState.java"/>
 </editors>
-<item historyLabel="MetaTicTacToeClient.java" index="0">
-<position/>
-</item>
-<item historyLabel="MetaTicTacToeClient.java" index="0">
-<position/>
-</item>
-<item historyLabel="MetaTicTacToeClient.java" index="0">
-<position/>
-</item>
-<item historyLabel="MetaTicTacToeClient.java" index="0">
-<position/>
-</item>
-<item historyLabel="MetaTicTacToeClient.java" index="0">
-<position/>
-</item>
-<item historyLabel="MetaTicTacToeClient.java" index="0">
-<position/>
-</item>
-<item historyLabel="MetaTicTacToeClient.java" index="0">
-<position/>
-</item>
-<item historyLabel="MetaTicTacToeClient.java" index="0">
-<position/>
-</item>
-<item historyLabel="MetaTicTacToeClient.java" index="0">
-<position/>
-</item>
-<item historyLabel="MetaTicTacToeClient.java" index="0">
-<position/>
-</item>
 <item historyLabel="MetaTicTacToeClient.java" index="0">
 <position info="not_deleted" x="272" y="0"/>
 </item>
@@ -368,8 +338,38 @@
 <item historyLabel="GameState.java" index="4">
 <position info="not_deleted" x="872" y="0"/>
 </item>
-<item active="true" historyLabel="MetaTicTacToeServer.java" index="1">
+<item historyLabel="MetaTicTacToeServer.java" index="1">
 <position info="not_deleted" x="234" y="0"/>
+</item>
+<item historyLabel="GameState.java" index="6">
+<position info="not_deleted" x="872" y="0"/>
+</item>
+<item historyLabel="GameState.java" index="6">
+<position info="not_deleted" x="3087" y="0"/>
+</item>
+<item historyLabel="GameState.java" index="6">
+<position info="not_deleted" x="3154" y="0"/>
+</item>
+<item historyLabel="GameState.java" index="6">
+<position info="not_deleted" x="1556" y="0"/>
+</item>
+<item historyLabel="MetaTicTacToeServer.java" index="1">
+<position info="not_deleted" x="2483" y="0"/>
+</item>
+<item historyLabel="GameState.java" index="6">
+<position info="not_deleted" x="1556" y="0"/>
+</item>
+<item historyLabel="GameState.java" index="6">
+<position info="not_deleted" x="1558" y="0"/>
+</item>
+<item historyLabel="MetaTicTacToeServer.java" index="1">
+<position info="not_deleted" x="2483" y="0"/>
+</item>
+<item historyLabel="MetaTicTacToeServer.java" index="1">
+<position info="not_deleted" x="3189" y="0"/>
+</item>
+<item active="true" historyLabel="MetaTicTacToeServer.java" index="1">
+<position info="not_deleted" x="2946" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

@@ -1,0 +1,265 @@
+package metatictactoe;
+
+public class GameState {
+	private boolean[] isValid;
+	private int[] owner;
+	private boolean[] isWon;
+	private int[] winner;
+	private int currPlayer;
+	private int gameWinner = 0;
+	public GameState()
+	{
+		isValid = new boolean[81];
+		owner = new int[81];
+		for (int i = 0; i < 81; i++)
+		{
+			isValid[i] = true;
+			owner[i] = 0;
+		}
+		isWon = new boolean[9];
+		winner = new int[9];
+		for (int i = 0; i < 9; i++)
+		{
+			isWon[i] = false;
+			winner[i] = 0;
+		}
+		currPlayer = 1;
+	}
+	
+	public String validMovesToString()
+	{
+		StringBuilder s = new StringBuilder();
+		for (int i = 0; i < 81; i++)
+		{
+			if (isValid[i])
+			{
+				if (s.length() != 0)
+				{
+					s.append(" ");
+				}
+				s.append(i);
+			}
+		}
+		s.append("\n");
+		return s.toString();
+	}
+	
+	public int getTurn()
+	{
+		return currPlayer;
+	}
+	
+	public int getWinner()
+	{
+		return gameWinner;
+	}
+	
+	public boolean makeMove(int where)
+	{
+		if (where < 0 || where > 80 || !isValid[where] || gameWinner != 0)
+			return false;
+		owner[where] = currPlayer;
+		int gridNum = getGridNum(where);
+		int[] borders = getLocalGrid(gridNum);
+		if (checkTaken(borders))
+		{
+			isWon[gridNum] = true;
+			System.out.println("Taken!");
+			if (winner[gridNum] == 0)
+				winner[gridNum] = currPlayer;
+			if (checkTaken(winner))
+			{
+				gameWinner = currPlayer;
+			}
+		}
+		currPlayer = -currPlayer;
+		isValid = getValid(where);
+		return true;
+	}
+	
+	public String stateToString()
+	{
+		StringBuilder s = new StringBuilder();
+		s.append("STATE\n");
+		for (int i = 0; i < 8; i ++)
+		{
+			s.append(winner[i] + " ");
+		}
+		s.append(winner[8] + "\n");
+		for (int i = 0; i < 80; i++)
+		{
+			s.append(owner[i] + " ");
+		}
+		s.append(owner[80] + "\n");
+		return s.toString();
+	}
+
+	private int getGridPos(int where)
+	{
+		int gridNum = getGridNum(where);
+		int base = ((gridNum / 3) * 27) + ((gridNum % 3) * 3);
+		int newGrid = -1;
+		if (where == base)
+		{
+			newGrid = 0;
+		}
+		else if (where == base + 1)
+		{
+			newGrid = 1;
+		}
+		else if (where == base + 2)
+		{
+			newGrid = 2;
+		}
+		else if (where == base + 9)
+		{
+			newGrid = 3;
+		}
+		else if (where == base + 10)
+		{
+			newGrid = 4;
+		}
+		else if (where == base + 11)
+		{
+			newGrid = 5;
+		}
+		else if (where == base + 18)
+		{
+			newGrid = 6;
+		}
+		else if (where == base + 19)
+		{
+			newGrid = 7;
+		}
+		else if (where == base + 20)
+		{
+			newGrid = 8;
+		}
+		return newGrid;
+	}
+	
+	private boolean[] getValid(int where)
+	{
+		boolean[] newValid = new boolean[81];
+		int gridPos = getGridPos(where);
+		boolean anyAreOkay = false;
+		for (int i = 0; i < 81; i++)
+		{
+			if (owner[i] == 0 && gridPos == getGridNum(i))
+			{
+				newValid[i] = true;
+				anyAreOkay = true;
+			}
+			else
+			{
+				newValid[i] = false;
+			}
+		}
+		if (!anyAreOkay)
+		{
+			for (int i = 0; i < 81; i++)
+			{
+				if (owner[i] == 0)
+				{
+					newValid[i] = true;
+					anyAreOkay = true;
+				}
+			}
+			if (!anyAreOkay)
+			{
+				newValid = null;
+			}
+		}
+		return newValid;
+	}
+	
+	private boolean checkTaken(int[] localGrid)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			if (localGrid[i*3] == localGrid[i*3+1] && localGrid[i*3] == localGrid[i*3+2] && localGrid[i*3] != 0)
+			{
+				return true;
+			}
+			if (localGrid[i] == localGrid[i+3] && localGrid[i] == localGrid[i+6] && localGrid[i] != 0)
+			{
+				return true;
+			}
+		}
+		if (localGrid[0] == localGrid[4] && localGrid[4] == localGrid[8] && localGrid[4] != 0)
+		{
+			return true;
+		}
+		if (localGrid[2] == localGrid[4] && localGrid[4] == localGrid[6] && localGrid[4] != 0)
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	private int[] getLocalGrid(int gridNum)
+	{
+		int[] retVal = new int[9];
+		int base = ((gridNum / 3) * 27) + ((gridNum % 3) * 3);
+		retVal[0] = owner[base];
+		retVal[1] = owner[base+1];
+		retVal[2] = owner[base+2];
+		retVal[3] = owner[base + 9];
+		retVal[4] = owner[base + 10];
+		retVal[5] = owner[base + 11];
+		retVal[6] = owner[base + 18];
+		retVal[7] = owner[base + 19];
+		retVal[8] = owner[base + 20];
+		return retVal;
+	}
+	
+	private int getGridNum(int where)
+	{
+		if (where % 9 < 3)
+		{
+			if (where < 27)
+			{
+				return 0;
+			}
+			else if (where < 54)
+			{
+				return 3;
+			}
+			else
+			{
+				return 6;
+			}
+		}
+		else if (where % 9 < 6)
+		{
+			if (where < 27)
+			{
+				return 1;
+			}
+			else if (where < 54)
+			{
+				return 4;
+			}
+			else
+			{
+				return 7;
+			}
+		}
+		else
+		{
+			if (where < 27)
+			{
+				return 2;
+			}
+			else if (where < 54)
+			{
+				return 5;
+			}
+			else
+			{
+				return 8;
+			}
+		}
+	}
+	
+}

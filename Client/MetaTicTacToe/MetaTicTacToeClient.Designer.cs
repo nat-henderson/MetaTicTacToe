@@ -270,6 +270,11 @@ namespace MetaTicTacToe
                             state = State.FINISHED;
                             MessageBox.Show("You lose!");
                         }
+                        else if (s.Equals("DRAW"))
+                        {
+                            state = State.FINISHED;
+                            MessageBox.Show("It's a draw!");
+                        }
                     }
                     Console.WriteLine(s);
                     Console.WriteLine(state.ToString());
