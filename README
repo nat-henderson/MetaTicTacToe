@@ -1,0 +1,5 @@
+This is a meta-tic-tac-toe server and client.
+
+End goal for this project is an AI that can play the game!  Hence the server-client model for what should have been a really simple P2P game.  Didn't want to rewrite everything when implementing a new kind of AI, so all clients are responsible for is displaying game state and returning valid responses to the server.  The server will reject invalid responses and request a new one.
+
+The game is played in this way:  Your objective is to get three in a row of the major boards to belong to you.  The first player may play in any space he or she chooses.  The second player must play in the game corresponding in location within the large board to the space in the small board where the first player played.  The first player must then play in the game selected by the second player's movements.  This continues until the game is over.  If at any time no moves are valid (with the exception of a tie), the player with no options may play in any square.
