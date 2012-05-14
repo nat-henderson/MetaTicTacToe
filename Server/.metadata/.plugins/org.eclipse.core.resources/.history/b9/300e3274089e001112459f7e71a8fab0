@@ -1,0 +1,124 @@
+package metatictactoe;
+
+import java.io.*;
+import java.net.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class MetaTicTacToeServer {
+	public static void main(String [] args)
+	{
+		ServerSocket sock = null;
+		try {
+			sock = new ServerSocket(30004);
+		}
+		catch (IOException e)
+		{
+			System.err.println("Could not listen on port 9125.");
+			System.exit(1);
+		}
+		Socket conn1 = null;
+		Socket conn2 = null;
+		try {
+			conn1 = sock.accept();
+		}
+		catch (IOException e)
+		{
+			System.err.println("Could not accept connection");
+			System.exit(1);
+		}
+		try {
+			conn2 = sock.accept();
+		}
+		catch (IOException e)
+		{
+			System.err.println("Could not accept connection");
+			System.exit(1);
+		}
+		PrintWriter out1 = null;
+		PrintWriter out2 = null;
+		BufferedReader in1 = null;
+		BufferedReader in2 = null;
+		try {
+			out1 = new PrintWriter(conn1.getOutputStream(), true);
+			out2 = new PrintWriter(conn2.getOutputStream(), true);
+			in1 = new BufferedReader(new InputStreamReader(conn1.getInputStream()));
+			in2 = new BufferedReader(new InputStreamReader(conn2.getInputStream()));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Could not do anything useful.");
+			System.exit(1);
+		}
+		GameState gameState = new GameState();
+		while (gameState.getWinner() == 0)
+		{
+			try
+			{
+				if (gameState.getTurn() == 1)
+				{
+					out1.write(gameState.stateToString());
+					out1.write("TURN\n");
+					out1.write(gameState.validMovesToString());
+					out1.flush();
+					while (!in1.ready())
+					{
+						try {
+							Thread.sleep(10);
+						} catch (InterruptedException e) {	/* ignore */  }
+					}
+					String inString = in1.readLine();
+					System.out.println(inString);
+					int toTry = getInt(inString);
+					if (gameState.makeMove(toTry))
+					{
+						out1.write("ACPT\n");
+						out1.write(gameState.stateToString());
+						System.out.println("ACPT");
+						System.out.println(gameState.stateToString());
+						out1.flush();
+					}
+				}
+				else
+				{
+					out2.write(gameState.stateToString());
+					out2.write("TURN\n");
+					out2.write(gameState.validMovesToString());
+					out2.flush();
+					while (!in2.ready())
+					{
+						try {
+							Thread.sleep(10);
+						} catch (InterruptedException e) {	/* ignore */  }
+					}
+					String inString = in2.readLine();
+					System.out.println(inString);
+					int toTry = getInt(inString);
+					if (gameState.makeMove(toTry))
+					{
+						out2.write("ACPT\n");
+						out2.write(gameState.stateToString());
+						System.out.println("ACPT");
+						System.out.println(gameState.stateToString());
+						out2.flush();
+					}
+				}
+			}
+			catch (IOException e)
+			{
+				continue;
+			}
+		}
+	}
+	private static int getInt(String inString)
+	{
+		Matcher m = Pattern.compile("\\d+").matcher(inString);
+		if (m.find())
+		{
+			return Integer.parseInt(m.group());
+		}
+		else
+		{
+			return -1;
+		}
+	}
+}

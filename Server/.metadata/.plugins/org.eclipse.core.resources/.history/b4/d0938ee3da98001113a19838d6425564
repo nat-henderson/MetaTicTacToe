@@ -1,0 +1,12 @@
+package metatictactoe;
+
+import javax.swing.*;
+import java.awt.GridLayout;
+import javax.swing.border.TitledBorder;
+import java.awt.FlowLayout;
+import javax.swing.table.DefaultTableModel;
+
+public class MetaTicTacToeClient extends JFrame {
+	public MetaTicTacToeClient() {
+	}
+}
